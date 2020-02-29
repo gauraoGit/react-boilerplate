@@ -1,5 +1,5 @@
 import { takeLatest } from 'redux-saga';
-import { REQUEST_TOPICS } from "./constants";
+import { REQUEST_TOPICS } from './constants';
 import { call, put } from 'redux-saga/effects';
 import { requestTopicsFailed, requestTopicsSucceeded } from './actions';
 

@@ -1,4 +1,4 @@
-import { take, call, put, select } from 'redux-saga/effects';
+import { call, put } from 'redux-saga/effects';
 import { takeLatest } from 'redux-saga';
 import { SELECT_TOPIC } from '../NavigationContainer/constants';
 import { requestLinksFailed, requestLinksSucceeded } from './actions';

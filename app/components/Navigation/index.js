@@ -24,13 +24,14 @@ function Navigation({ topics, selectTopic }) {
   );
 }
 
-// Navigation.propTypes = {
-//   topics: React.Proptypes.arrayOf(
-//     React.Proptypes.shape({
-//       name: React.Proptypes.string.isRequired,
-//       description: React.Proptypes.string.isRequired,
-//     })
-//   ).isRequired,
-// };
+Navigation.propTypes = {
+  topics: React.Proptypes.arrayOf(
+    React.Proptypes.shape({
+      name: React.Proptypes.string.isRequired,
+      description: React.Proptypes.string.isRequired,
+    })
+  ).isRequired,
+  selectTopic: React.Proptypes.func.isRequired,
+};
 
 export default Navigation;
