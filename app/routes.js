@@ -23,11 +23,25 @@ export default function createRoutes(store) {
       getComponent(nextState, cb) {
         const importModules = Promise.all([
           System.import('containers/HomePage'),
+          System.import('containers/NavigationContainer/reducer'),
+          System.import('containers/NavigationContainer/sagas'),
+          System.import('containers/LinkListContainer/reducer'),
+          System.import('containers/LinkListContainer/sagas'),
         ]);
 
         const renderRoute = loadModule(cb);
 
-        importModules.then(([component]) => {
+        importModules.then(([
+          component,
+          navReducer,
+          navSagas,
+          linkListReducer,
+          linkListSagas,
+        ]) => {
+          injectReducer('navigationContainer', navReducer.default);
+          injectSagas('navigationContainer', navSagas.default);
+          injectReducer('linkListContainer', linkListReducer.default);
+          injectSagas('linkListContainer', linkListSagas.default);
           renderRoute(component);
         });
 
