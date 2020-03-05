@@ -10,9 +10,10 @@ import {
   REQUEST_LINKS_FAILED,
 } from './constants';
 
-export function requestLinks() {
+export function requestLinks(topicName) {
   return {
     type: REQUEST_LINKS,
+    topicName,
   };
 }
 
